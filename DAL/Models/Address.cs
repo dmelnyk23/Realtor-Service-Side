@@ -19,6 +19,6 @@ namespace DAL
 
         public bool Street { get; set; }
 
-        public Lot Lot { get; set; }
+        public ICollection<Lot> Lots { get; set; }
     }
 }
