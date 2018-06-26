@@ -8,5 +8,6 @@ namespace DAL
 {
     public class DatabaseDAL
     {
+        //dima chotkiy paren'
     }
 }
