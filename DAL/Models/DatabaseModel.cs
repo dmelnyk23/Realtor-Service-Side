@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class DatabaseModel: DbContext
+    public class DatabaseModel: DbContext
     {
    
         public DatabaseModel()
-            : base("name=Realtor")
+            : base("name=DatabaseModel")
         {
             Database.SetInitializer<DatabaseModel>(new CustomInitializer<DatabaseModel>());
         }
