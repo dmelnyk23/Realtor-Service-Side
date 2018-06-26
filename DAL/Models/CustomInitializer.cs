@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Photo
+    public class CustomInitializer
     {
-        public int ID { get; set; }
-
-        public string Path { get; set; }
-
-        public Lot Lot { get; set; }
-
     }
 }

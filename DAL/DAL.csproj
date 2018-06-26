@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="DAL.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\CustomInitializer.cs" />
+    <Compile Include="Models\DatabaseModel.cs" />
     <Compile Include="Models\Lot.cs" />
     <Compile Include="Models\Photo.cs" />
     <Compile Include="Models\User.cs" />
