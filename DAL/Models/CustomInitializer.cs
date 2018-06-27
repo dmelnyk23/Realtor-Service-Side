@@ -12,7 +12,22 @@ namespace DAL
         protected override void Seed(DatabaseModel context)
         {
 
-
+            var lot = new Lot()
+            {
+                Price = 100000,
+                Description = "Perfect for single man",
+                Flat = true,
+                SingleFamilyHouse = true
+            };
+            List<Lot> lots = new List<Lot> { lot };
+            var user = new User()
+            {
+                Name = "Dima",
+                Login = "admin",
+                Password = "admin",
+                IsAdmin = true,
+                Lots = lots
+            };
         }
 
     }

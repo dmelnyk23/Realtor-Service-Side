@@ -12,7 +12,7 @@ namespace DAL
         public int ID { get; set; }
 
         [Required]
-        public decimal Country { get; set; }
+        public string Country { get; set; }
 
         [Required]
         public string City { get; set; }
