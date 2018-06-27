@@ -19,6 +19,9 @@ namespace DAL
         [Required]
         public bool IsAdmin { get; set; }
 
+        [Required]
+        public string PhoneNumber { get; set; }
+
         public List<int> Favourite { get; set; }
 
         public ICollection<Lot> Lots { get; set; }
