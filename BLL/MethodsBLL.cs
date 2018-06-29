@@ -170,6 +170,50 @@ namespace BLL
 
         public void AddLot(LotDTO lotDTO)
         {
+            var address = _dal.CheckAdress(lotDTO.Address.Country, lotDTO.Address.City);
+            if (address != null)
+            {
+                Lot lot = new Lot()
+                {
+                    Address = address,
+                    Photos = ConvertToPhotoDAL(lotDTO.Photos),
+                    Apartment = lotDTO.Apartment,
+                    Description = lotDTO.Description,
+                    Flour = lotDTO.Flour,
+                    House = lotDTO.House,
+                    IsReserved = lotDTO.IsReserved,
+                    IsSold = lotDTO.IsSold,
+                    Price = lotDTO.Price,
+                    RoomsCount = lotDTO.RoomsCount,
+                    Square = lotDTO.Square,
+                    User = ConvertToUserDAL(lotDTO.User)
+                };
+                _dal.AddLot(lot);
+            }
+            else
+            {
+                Lot lot = new Lot()
+                {
+                    Address = ConvertToAddressDAL(lotDTO.Address),
+                    Photos = ConvertToPhotoDAL(lotDTO.Photos),
+                    Apartment = lotDTO.Apartment,
+                    Description = lotDTO.Description,
+                    Flour = lotDTO.Flour,
+                    House = lotDTO.House,
+                    IsReserved = lotDTO.IsReserved,
+                    IsSold = lotDTO.IsSold,
+                    Price = lotDTO.Price,
+                    RoomsCount = lotDTO.RoomsCount,
+                    Square = lotDTO.Square,
+                    User = ConvertToUserDAL(lotDTO.User)
+                };
+                _dal.AddLot(lot);
+            }
+
+        }
+
+        public void LotEdit(LotDTO lotDTO)
+        {
             Lot lot = new Lot()
             {
                 Address = ConvertToAddressDAL(lotDTO.Address),
@@ -185,7 +229,12 @@ namespace BLL
                 Square = lotDTO.Square,
                 User = ConvertToUserDAL(lotDTO.User)
             };
-            _dal.AddLot(lot);
+            _dal.LotEdit(lot);
+        }
+
+        public void DeleteLot(int id)
+        {
+            _dal.DeleteLot(id);
         }
 
         public Lot ConvertToDALLot(LotDTO lotDTO)

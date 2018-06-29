@@ -77,9 +77,9 @@ namespace DAL
             _ctx.SaveChanges();
         }
 
-        public Address CheckAdress(Address address)
+        public Address CheckAdress(string country, string city)
         {
-            var check = _ctx.Addresses.FirstOrDefault(a => a.Country == address.Country && a.City == address.City);
+            var check = _ctx.Addresses.FirstOrDefault(a => a.Country == country && a.City == city);
             return check;
         }
     }
