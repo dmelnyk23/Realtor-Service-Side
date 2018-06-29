@@ -11,7 +11,7 @@ namespace DAL
     {
    
         public DatabaseModel()
-            : base("name=DatabaseModelGleb")
+            : base("name=DatabaseModel")
         {
             Database.SetInitializer<DatabaseModel>(new CustomInitializer<DatabaseModel>());
         }

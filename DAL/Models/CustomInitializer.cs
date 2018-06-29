@@ -11,13 +11,25 @@ namespace DAL
     {
         protected override void Seed(DatabaseModel context)
         {
+            Address address = new Address()
+            {
+                City = "Rivne",
+                Country = "Ukraine",
+                Street = "Soborna"
+            };
 
             var lot = new Lot()
             {
                 Price = 100000,
                 Description = "Perfect for single man",
-                Flat = true,
-                SingleFamilyHouse = true
+                House = true,
+                IsSold = false,
+                IsReserved = false,
+                Apartment = false,
+                Address = address,
+                Flour = 1,
+                RoomsCount = 3,
+                Square = 100
             };
             List<Lot> lots = new List<Lot> { lot };
             var user = new User()
@@ -25,9 +37,12 @@ namespace DAL
                 Name = "Dima",
                 Login = "admin",
                 Password = "admin",
+                PhoneNumber = "11111111111",
                 IsAdmin = true,
                 Lots = lots
             };
+
+
         }
 
     }

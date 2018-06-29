@@ -14,10 +14,25 @@ namespace DAL
         public string Description { get; set; }
 
         [Required]
-        public bool Flat { get; set; }
+        public double Square { get; set; }
 
         [Required]
-        public bool SingleFamilyHouse { get; set; }
+        public int RoomsCount { get; set; }
+
+        [Required]
+        public int Flour { get; set; }
+
+        [Required]
+        public bool Apartment { get; set; }
+
+        [Required]
+        public bool IsSold { get; set; }
+
+        [Required]
+        public bool IsReserved { get; set; }
+
+        [Required]
+        public bool House { get; set; }
 
         public Address Address{ get; set; }
 
