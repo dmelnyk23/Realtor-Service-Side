@@ -1,9 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace DAL
+namespace BLL.Models
 {
-    public class Lot
+    public class LotDTO
     {
         public int ID { get; set; }
 
@@ -34,11 +38,12 @@ namespace DAL
         [Required]
         public bool House { get; set; }
 
-        public Address Address{ get; set; }
+        public AddressDTO Address { get; set; }
 
-        public ICollection<Photo> Photos { get; set; }
+        public ICollection<PhotoDTO> Photos { get; set; }
 
-        public User User { get; set; }
+        public UserDTO User { get; set; }
+
 
     }
 }

@@ -50,7 +50,6 @@ namespace DAL
 
         public void AddLot(Lot lot)
         {
-            lot.Address = _ctx.Addresses.FirstOrDefault(a => a.ID == lot.ID) as Address;
             _ctx.Lots.Add(lot);
             _ctx.SaveChanges();
         }

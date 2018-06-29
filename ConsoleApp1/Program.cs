@@ -14,6 +14,8 @@ namespace ConsoleApp1
         {
             MethodsDAL methodsDAL = new MethodsDAL();
             methodsDAL.AddUser(new User {  Name="Gleb", IsAdmin = true, Login = "gleb123", Password = "123gleb", PhoneNumber = "0981789676"});
+            User user = new User() { ID = 1 };
+            methodsDAL.DeleteUser(user);
         }
     }
 }
