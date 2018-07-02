@@ -163,9 +163,9 @@ namespace WCF
             return photos;
         }
 
-        public List<Lot> GetLots()
+        public Lot[] GetLots()
         {
-            return ConvertToLotWCF(_bll.GetLots());
+            return ConvertToLotWCF(_bll.GetLots()).ToArray();
         }
 
         public void ReserveLot(int id)
@@ -175,28 +175,6 @@ namespace WCF
 
         public void AddLot(Lot lot)
         {
-            var address = _bll.CheckAdress(lot.Address.Country, lot.Address.City);
-            if (address != null)
-            {
-                LotDTO lotDTO = new LotDTO()
-                {
-                    Address = address,
-                    Photos = ConvertToPhotoBLL(lot.Photos),
-                    Apartment = lot.Apartment,
-                    Description = lot.Description,
-                    Flour = lot.Flour,
-                    House = lot.House,
-                    IsReserved = lot.IsReserved,
-                    IsSold = lot.IsSold,
-                    Price = lot.Price,
-                    RoomsCount = lot.RoomsCount,
-                    Square = lot.Square,
-                    User = ConvertToUserBLL(lot.User)
-                };
-                _bll.AddLot(lotDTO);
-            }
-            else
-            {
                 LotDTO lotDTO = new LotDTO()
                 {
                     Address = ConvertToAddressBLL(lot.Address),
@@ -213,7 +191,7 @@ namespace WCF
                     User = ConvertToUserBLL(lot.User)
                 };
                 _bll.AddLot(lotDTO);
-            }
+            
 
         }
 

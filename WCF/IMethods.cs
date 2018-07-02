@@ -26,7 +26,7 @@ namespace WCF
         List<User> GetUsers();
 
         [OperationContract]
-        List<Lot> GetLots();
+        Lot[] GetLots();
 
         [OperationContract]
         void ReserveLot(int id);
